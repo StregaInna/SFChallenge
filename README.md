@@ -9,7 +9,7 @@ We might also want to some day add more information about the companies, which w
 
 Throughout the code you will find occasional comments on where we might plug in the components neede for adding some of these features. 
 
-## setup
+## setup and run
 To start with you will need to make the database(s).
 use the following commands:
 
@@ -24,5 +24,9 @@ npm install
 You will also need to seed your database by running the seed file:
 
 npm run seed
+
+Finally, you can use this command to run the app on localhost:1337
+
+npm run start-dev
  
 
