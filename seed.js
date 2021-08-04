@@ -4,7 +4,7 @@ const { green, red } = require("chalk")
 const { db, Coder } = require("./server/db")
 //this grabes our database to seed it
 
-const {coders} = require("./data")
+const  coders  = require("./data")
 //this grabs the data we are going to seed the database with
 
 const seed = async () => {

@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require('./database')
 
-const Coder = db.define('student', {
+const Coder = db.define('coder', {
     candidate_id: {
         type: Sequelize.INTEGER,
         allowNull: false
