@@ -5,7 +5,12 @@
 const db = require('./database')
 const Coder = require('./coder')
 
-// If this app were to scale up and include a database table for companies, this this is where the association between coders and companies would go 
+// If this app were to scale up and include a database table for companies, 
+//this this is where the association between coders and companies would go.
+// It would like like this:
+//
+//Company.hasMany(Coder)
+//Coder.belongsTo(Company)
 
 module.exports = {
   db,
