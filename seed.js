@@ -1,7 +1,7 @@
-const { green, red } = require("chalk");
+const { green, red } = require("chalk")
 //this allows us to make our success or error messages stand out more in the terminal
 
-const { db, Coder } = require("./server/db");
+const { db, Coder } = require("./server/db")
 //this grabes our database to seed it
 
 const {coders} = require("./data")
