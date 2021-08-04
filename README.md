@@ -21,3 +21,8 @@ From inside this directory:
 
 npm install
 
+You will also need to seed your database by running the seed file:
+
+npm run seed
+ 
+
