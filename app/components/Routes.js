@@ -7,7 +7,6 @@ const Routes = () => {
     <Router>
       <div>
         <nav>
-          <h3>Welcome!</h3>
           <div className="navLinks">
           </div>
         </nav>
