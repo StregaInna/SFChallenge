@@ -4,9 +4,12 @@
 
 const db = require('./database')
 const Coder = require('./coder')
+const Company = require('./company')
 
-// If this app were to scale up and include a database table for companies, 
-//this this is where the association between coders and companies would go.
+// This this is where the association between coders and companies would go.
+// I have left this out for now because we are using only seed data,
+//  but in a future case where we want to have users and companies added and updated in the app
+//  we would want to set up such a relationship here.
 // It would like like this:
 //
 //Company.hasMany(Coder)
@@ -15,4 +18,5 @@ const Coder = require('./coder')
 module.exports = {
   db,
   Coder,
+  Company,
 }

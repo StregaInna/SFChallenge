@@ -1,10 +1,11 @@
 const { green, red } = require("chalk")
 //this allows us to make our success or error messages stand out more in the terminal
 
-const { db, Coder } = require("./server/db")
+const { db, Coder, Company } = require("./server/db")
 //this grabes our database to seed it
 
-const  coders  = require("./data")
+const  coders  = require("./seed_data/coderData")
+const companies = require("./seed_data/companyData")
 //this grabs the data we are going to seed the database with
 
 const seed = async () => {
@@ -13,6 +14,9 @@ const seed = async () => {
 
     await Promise.all(coders.map(coder => {
       return Coder.create(coder)
+    }))
+    await Promise.all(companies.map(company => {
+      return Company.create(company)
     }))
   } catch (err) {
     console.log(red(err))
