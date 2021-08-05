@@ -1,5 +1,5 @@
 // This explanation is also intended for the percentileByCommunicationScore and 
-//  the precentileByAgrogateScore files. The use the same aproach.
+//  the precentileByAggregateScore files. The use the same aproach.
 // NB: This file is best read bottom to top.
 // precentileByCodingScore takes an array of coder objects and a candidate_id 
 //   and returns that candidate's precentile standing in the array of coders
@@ -21,7 +21,7 @@ function mergeByCodeScore(left, right) {
       } else if (rightIdx === right.length) {
         merged.push(left[leftIdx]);
         leftIdx++;
-      } else if (left[leftIdx].coding_score < right[rightIdx].coding.score) {
+      } else if (left[leftIdx].coding_score < right[rightIdx].coding_score) {
         merged.push(left[leftIdx]);
         leftIdx++;
       } else {

@@ -19,7 +19,7 @@ class AllCoders extends React.Component {
           {this.props.coders.map((coder) => {
               return(
             <li key={coder.id} className="listItem">
-                <h3>id: {coder.candidate_id}, communcation score:{coder.communication_score}, coding score: {coder.coding_score}, title: {coder.title} </h3>
+                <h3>id: {coder.candidate_id}, communication score:{coder.communication_score}, coding score: {coder.coding_score}, title: {coder.title} </h3>
             </li>)})
           }
         </ul>) : (
