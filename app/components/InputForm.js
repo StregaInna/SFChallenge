@@ -42,6 +42,12 @@ class InputForm extends Component {
                     <input name="differential" onChange={this.handleChange} value={differential} />
                     <button type="submit">Submit</button>
                 </form>
+                {(this.state.validID)? ( 
+                    <div></div>
+                ):(<h2>Not a Valid ID#</h2> )}
+                {(this.state.validDifferential)? ( 
+                    <div></div>
+                ):(<h2>Not a Valid Differential</h2> )}
             </div>
         )
     }
