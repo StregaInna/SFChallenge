@@ -1,3 +1,6 @@
+// This includes a lot of borrowed code to allow for setting up tests.
+//  see note in tests/testFiles/tests
+
 import { createStore, applyMiddleware } from 'redux'
 import axios from 'axios'
 import appReducer from './redux'

@@ -1,3 +1,12 @@
+// I have to be honest and admit that writing automated tests was not covered in my coding bootcamp
+// I tried here to write some by reverse engineering ones I've seen elsewhere
+// That being said, I appreciate well written tests as a guideline when coding, 
+//   and aspire to learn to the skill of writing them.
+// My current workflow involves testing my backend with Postman and Postico.
+// Dataflow to the front end was checked by building a superfluous component (see components/DisplayData.js)
+// Debugging was largely done through chrome debugger, redux logger, and (when all else failed) console.log 
+
+
 /* eslint-disable no-unused-expressions */
 import { expect } from "chai";
 import { mount } from "enzyme";
@@ -25,6 +34,29 @@ import { createStore } from "redux";
 const { db, Coder } = require("../../server/db");
 
 const seed = require("../../seed");
+const coders = [
+  {
+      candidate_id:889,	
+      communication_score:114028,	
+      coding_score:180944,	
+      title:'Engineer',	
+      company_id:2,
+  },
+  {
+      candidate_id:890,	
+      communication_score:62734,	
+      coding_score:64000,	
+      title:'Engineer',	
+      company_id:2,
+  },
+  {
+      candidate_id:891,	
+      communication_score:167656,	
+      coding_score:231216,	
+      title:'Engineer',	
+      company_id:2,
+  }
+]
 
   describe("Redux", () => {
     let fakeStore;

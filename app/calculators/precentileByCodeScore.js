@@ -1,11 +1,11 @@
 // This explanation is also intended for the percentileByCommunicationScore and 
-//  the precentileByAggregateScore files. The use the same aproach.
+//  the precentileByAggregateScore files. They use the same aproach.
 // NB: This file is best read bottom to top.
 // precentileByCodingScore takes an array of coder objects and a candidate_id 
 //   and returns that candidate's precentile standing in the array of coders
-// First it gets a sorted copy of the Array by calling sortByCodingScore, 
-//   which runs a recursive, merge-sort algorithm (using mergeByCodeScore as a helper function)
-// Next find the coder's index in the sorted list by calling indexOfByCandidateId
+// First it gets a sorted copy of the array by calling sortByCodingScore, 
+//   which runs a recursive, merge-sort algorithm (using mergeByCodeScore and split as helper functions)
+// Next we find the coder's index in the sorted list by calling indexOfByCandidateId
 // Finally we devide the index of that coder by the length of the array, 
 //  muliply by 100 to get a precentile, and return the answer.
 

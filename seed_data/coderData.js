@@ -1,3 +1,5 @@
+// Adding all of this seed data manually really underscores the value of RPAs
+
 const coders = [
     {
         candidate_id:889,	

@@ -3,7 +3,7 @@
 // The goal here is to return an array that only includes the coders in similar companies to 
 //   the specified coder. I've broken this down into 4 functions to make it more readable.
 
-// codersBySimilarCompany calls a helper function to get the company id for the specified coder
+// codersToComparecalls a helper function to get the company id for the specified coder
 //   it then uses that id to call similarCompany
 // similarCompany takes the array of company objects and returns an array of company IDs
 //   for the companies whose fractal_index is within the specified differential of the 
@@ -11,7 +11,7 @@
 //   It also uses a helper function to find the fractal index by the company id
 //
 // I chose to have the differential as an argument instead of hard coding in a value
-//   so that we can eventually let the users set it themselves on the front end.
+//   so that we can let the users set it themselves on the front end.
 
 function getFractalIndexById(companyArray, companyId){
     for(let i = 0; i < companyArray.length; i++){

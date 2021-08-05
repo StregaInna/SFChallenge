@@ -25,5 +25,6 @@ const Coder = db.define('coder', {
 })
 
 //I am allowing comany_id to be null because I imagine a case where an eningeer might be between companies, even though this does not exist in our seed data
+//  it also wouldn't work with our current method of comparing by similar companies, but could if we compared all coders
 
 module.exports = Coder

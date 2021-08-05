@@ -1,3 +1,5 @@
+// This is where the React App comes together with the logic found in the app/calculators files
+
 import codersToCompare from "../calculators/codersToCompare"
 import precentileByComScore from "../calculators/precentileByCommunicationScore"
 import precentileByCodingScore from "../calculators/precentileByCodeScore"

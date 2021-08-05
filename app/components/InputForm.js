@@ -20,6 +20,7 @@ class InputForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
     componentDidMount(){
+        //we need this data loaded into state in order to submit the form
         this.props.fetchCoders()
         this.props.fetchCompanies()
     }
@@ -30,10 +31,12 @@ class InputForm extends Component {
     }
     handleSubmit(event){
         event.preventDefault()
+        //first we are validating the input fields, and updating state to trigger an error message if invalid
         this.setState({
             validID: validateCoderId(this.props.coders, parseInt(this.state.coderId)),
             validDifferential: validateDifferential(parseFloat(this.state.differential)) 
         })
+        //if they are valid inputs, we dispatch a thunk which calls our calculator functions and then loads the results into state
         if (this.state.validID && this.state.validDifferential){
             this.props.getStats(this.props.coders, this.props.companies, parseInt(this.state.coderId), parseFloat(this.state.differential))
         }
