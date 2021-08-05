@@ -25,7 +25,7 @@ function getFractalIndexById(companyArray, companyId){
 function similarCompany(companyArray, companyId, differential){
     const fractIndex = getFractalIndexById(companyArray, companyId)
     const filteredArray = companyArray.filter((company)=>{
-        const difference = (fractIndex - company.fractal_index)
+        let difference = (fractIndex - company.fractal_index)
         if (difference < 0){difference *= (-1)}
         return (difference <= differential)
     })
@@ -37,11 +37,11 @@ function findCompanyIdAndTitleByCoderId(coderArray, coderId){
     let title = ""
     for (let i = 0; i < coderArray.length; i++){
         if (coderArray[i].candidate_id === coderId){
-            companyId = coderArray[i].company_id
+            companyID = coderArray[i].company_id
             title = coderArray[i].title
         }
     }
-    return {companyId, title}
+    return {companyID, title}
 }
 
 function codersToCompare(coderArray, companyArray, coderId, differntial){

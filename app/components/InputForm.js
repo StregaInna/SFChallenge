@@ -1,6 +1,10 @@
 import React, {Component} from 'react'
+import { connect } from 'react-redux'
 import {validateCoderId, validateDifferential} from '../calculators/inputCheckers'
 import { getStats } from '../redux/coderStats'
+import { fetchCompanies } from '../redux/companies'
+import { fetchCoders } from '../redux/coders'
+
 
 class InputForm extends Component {
     constructor(props){
@@ -14,6 +18,10 @@ class InputForm extends Component {
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+    }
+    componentDidMount(){
+        this.props.fetchCoders()
+        this.props.fetchCompanies()
     }
     handleChange(event) {
         this.setState({
@@ -37,7 +45,7 @@ class InputForm extends Component {
                 <h3>Entry the Coder's Candidate Id #</h3>
                 <form className="add-form" onSubmit={this.handleSubmit}>
                     <lable htmlFor="coderId">Id #:</lable>
-                    <input name="coderID" onChange={this.handleChange} value={coderId} />
+                    <input name="coderId" onChange={this.handleChange} value={coderId} />
                     <lable htmlFor="differential">Set Differential (a number between 0 and 1):</lable>
                     <input name="differential" onChange={this.handleChange} value={differential} />
                     <button type="submit">Submit</button>
@@ -51,7 +59,6 @@ class InputForm extends Component {
             </div>
         )
     }
-
 }
 const mapState = (state) => {
     return {
@@ -61,6 +68,9 @@ const mapState = (state) => {
 }
 const mapDispatch = (dispatch) => {
     return ({
-      getStats: (coderArray, companyArray, coderId, differential) => dispatch(getStats(coderArray, companyArray, coderId, differential))  
+       fetchCoders: () => dispatch(fetchCoders()),
+       fetchCompanies: () => dispatch(fetchCompanies()), 
+       getStats: (coderArray, companyArray, coderId, differential) => dispatch(getStats(coderArray, companyArray, coderId, differential))  
     })
 }
+export default connect(mapState, mapDispatch)(InputForm)

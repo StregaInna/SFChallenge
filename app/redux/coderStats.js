@@ -2,7 +2,6 @@ import codersToCompare from "../calculators/codersToCompare"
 import precentileByComScore from "../calculators/precentileByCommunicationScore"
 import precentileByCodingScore from "../calculators/precentileByCodeScore"
 import precentileByAggScore from "../calculators/precentileByAggregate"
-import codersToCompare from "../calculators/codersToCompare"
 //ACTION TYPES
 
 const SET_STATS = 'SET_STATS'

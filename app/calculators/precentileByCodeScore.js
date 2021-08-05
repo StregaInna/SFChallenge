@@ -9,24 +9,30 @@
 // Finally we devide the index of that coder by the length of the array, 
 //  muliply by 100 to get a precentile, and return the answer.
 
+function split (array) {
+  const center = Math.floor(array.length / 2),
+        left = array.slice(0, center),
+        right = array.slice(center)
+  return [left, right]
+}
 function mergeByCodeScore(left, right) {
-    const merged = [];
-    let leftIdx = 0;
-    let rightIdx = 0;
+    const merged = []
+    let leftIdx = 0
+    let rightIdx = 0
     while (leftIdx < left.length || rightIdx < right.length) {
 
       if (leftIdx === left.length) {
-        merged.push(right[rightIdx]);
-        rightIdx++;
+        merged.push(right[rightIdx])
+        rightIdx++
       } else if (rightIdx === right.length) {
-        merged.push(left[leftIdx]);
-        leftIdx++;
+        merged.push(left[leftIdx])
+        leftIdx++
       } else if (left[leftIdx].coding_score < right[rightIdx].coding_score) {
-        merged.push(left[leftIdx]);
-        leftIdx++;
+        merged.push(left[leftIdx])
+        leftIdx++
       } else {
-        merged.push(right[rightIdx]);
-        rightIdx++;
+        merged.push(right[rightIdx])
+        rightIdx++
       }
     }
     return merged;

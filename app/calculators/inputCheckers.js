@@ -2,6 +2,7 @@
 
 export function validateCoderId(coderArray, coderID){
     for (let i = 0; i < coderArray.length; i++){
+        console.log('coder id is ', coderArray[i].candidate_id)
         if (coderArray[i].candidate_id === coderID){
             return true
         }
