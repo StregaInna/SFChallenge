@@ -1,6 +1,6 @@
 import React from "react"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
-import AllCoders from "./AllCoders"
+import DisplayData from "./DisplayData"
 
 const Routes = () => {
   return (
@@ -14,7 +14,7 @@ const Routes = () => {
           <h1>Welcome to Inna's solution to Simple Fractal's coding challenge!</h1>
         </main>
         <Switch>
-          <Route exact path="/coders" component={AllCoders} />
+          <Route exact path="/data" component={DisplayData} />
         </Switch>
       </div>
     </Router>

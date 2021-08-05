@@ -3,11 +3,13 @@
 import React from "react"
 import { connect } from "react-redux"
 import { fetchCoders} from "../redux/coders"
+import { fetchCompanies } from "../redux/companies"
 
-class AllCoders extends React.Component {
+class DisplayData extends React.Component {
   componentDidMount(){
     console.log('componentDidMount')
     this.props.fetchCoders()
+    this.props.fetchCompanies()
   }
   render() {
       console.dir(this.props.coders)
@@ -25,20 +27,35 @@ class AllCoders extends React.Component {
         </ul>) : (
           <h1>loading...</h1>
         )}
+               <h2>Here's our companies list:</h2>  
+        {(this.props.companies.length) ? (
+        <ul className="listAll">
+          {this.props.companies.map((company) => {
+              return(
+            <li key={company.id} className="listItem">
+                <h3>id: {company.company_id}, fractal_index: {company.fractal_index} </h3>
+            </li>)})
+          }
+        </ul>) : (
+          <h1>loading...</h1>
+        )}
       </div>)
   }
 }
 
 const mapState = (state) => {
   return {
-    coders: state.coders
+    coders: state.coders,
+    companies: state.companies
   }
 }
 
 const mapDispatch = (dispatch) => {
   return ({
-    fetchCoders: () => dispatch(fetchCoders())
+    fetchCoders: () => dispatch(fetchCoders()),
+    fetchCompanies: () => dispatch(fetchCompanies())
+
   })
 }
 
-export default connect(mapState, mapDispatch)(AllCoders);
+export default connect(mapState, mapDispatch)(DisplayData);
