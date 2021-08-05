@@ -38,7 +38,7 @@ function mergeByAggScore(left, right) {
 }
 function indexOfByCandidateId(codersArray, id){
   for(let i = 0; i < codersArray.length; i++){
-    if (codersArray[i]===id) return i
+    if (codersArray[i].candidate_id===id) return i
   }
   return 0
 }

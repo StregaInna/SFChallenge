@@ -21,9 +21,9 @@ export const setStats = (stats) => {
 export const getStats = (coderArray, companyArray, coderId, differential) => {
   return function (dispatch){
     const codersToCompareArray = codersToCompare(coderArray, companyArray, coderId, differential)
-    const comPrecentile = precentileByComScore(codersToCompareArray)
-    const coderPrecentile = precentileByCodingScore(codersToCompareArray)
-    const aggPrecentile = precentileByAggScore(codersToCompareArray)
+    const comPrecentile = precentileByComScore(codersToCompareArray, coderId)
+    const coderPrecentile = precentileByCodingScore(codersToCompareArray, coderId)
+    const aggPrecentile = precentileByAggScore(codersToCompareArray, coderId)
     dispatch(setStats({coderId, comPrecentile, coderPrecentile, aggPrecentile}))
   }
 }

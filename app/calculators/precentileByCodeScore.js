@@ -46,13 +46,14 @@ function mergeByCodeScore(left, right) {
 }
 function indexOfByCandidateId(codersArray, id){
   for(let i = 0; i < codersArray.length; i++){
-    if (codersArray[i]===id) return i
+    if (codersArray[i].candidate_id===id) return i
   }
   return 0
 }
 function precentileByCodingScore(codersArray, id){
   const sortedArray = sortByCodingScore(codersArray)
   const coderRank = indexOfByCandidateId(sortedArray, id)
+  console.log("rank ", coderRank)
   return ((coderRank/codersArray.length)*100)
 }
 export default precentileByCodingScore
