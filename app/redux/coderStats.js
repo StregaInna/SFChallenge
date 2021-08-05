@@ -1,7 +1,8 @@
-import codersBySimilarCompany from "../calculators/similarCompany"
+import codersToCompare from "../calculators/codersToCompare"
 import precentileByComScore from "../calculators/precentileByCommunicationScore"
 import precentileByCodingScore from "../calculators/precentileByCodeScore"
 import precentileByAggScore from "../calculators/precentileByAggregate"
+import codersToCompare from "../calculators/codersToCompare"
 //ACTION TYPES
 
 const SET_STATS = 'SET_STATS'
@@ -20,10 +21,10 @@ export const setStats = (stats) => {
 //this thunk creator creates a thunk that calls the functions from the calculator folder to get the stats for a given coder by id
 export const getStats = (coderArray, companyArray, coderId, differential) => {
   return function (dispatch){
-    const codersToCompare = codersBySimilarCompany(coderArray, companyArray, coderId, differential)
-    const comPrecentile = precentileByComScore(codersToCompare)
-    const coderPrecentile = precentileByCodingScore(codersToCompare)
-    const aggPrecentile = precentileByAggScore(codersToCompare)
+    const codersToCompareArray = codersToCompare(coderArray, companyArray, coderId, differential)
+    const comPrecentile = precentileByComScore(codersToCompareArray)
+    const coderPrecentile = precentileByCodingScore(codersToCompareArray)
+    const aggPrecentile = precentileByAggScore(codersToCompareArray)
     dispatch(setStats({coderId, comPrecentile, coderPrecentile, aggPrecentile}))
   }
 }

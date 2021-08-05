@@ -32,20 +32,25 @@ function similarCompany(companyArray, companyId, differential){
     return (filteredArray.map((company)=>{return company.company_id}))
 }
 
-function findCompanyIdByCoderId(coderArray, coderId){
+function findCompanyIdAndTitleByCoderId(coderArray, coderId){
+    let companyID = 0
+    let title = ""
     for (let i = 0; i < coderArray.length; i++){
         if (coderArray[i].candidate_id === coderId){
-            return (coderArray[i].company_id)
+            companyId = coderArray[i].company_id
+            title = coderArray[i].title
         }
     }
-    return 0
+    return {companyId, title}
 }
 
-function codersBySimilarCompany(coderArray, companyArray, coderId, differntial){
-    const companyID = findCompanyIdByCoderId(coderArray, coderId)
+function codersToCompare(coderArray, companyArray, coderId, differntial){
+    const {companyID, title } = findCompanyIdAndTitleByCoderId(coderArray, coderId)
     const similarCompanyArray = similarCompany(companyArray, companyID, differntial)
-    const codersInSimilarCompanies = coderArray.filter((coder)=>{return (similarCompanyArray.includes(coder.company_id))})
+    const codersInSimilarCompanies = coderArray.filter((coder)=>{
+        return (similarCompanyArray.includes(coder.company_id) && coder.title === title)
+    })
     return codersInSimilarCompanies
 }
 
-export default codersBySimilarCompany
+export default codersToCompare
