@@ -1,3 +1,5 @@
+// This is a depricated file left here to show a previous solution.
+// For the newer solution see percetile.js
 // See commentary of percentileByCodeScore for and explanation of this file
 
 function split (array) {

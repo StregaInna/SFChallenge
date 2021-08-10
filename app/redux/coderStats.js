@@ -1,9 +1,10 @@
 // This is where the React App comes together with the logic found in the app/calculators files
 
 import codersToCompare from "../calculators/codersToCompare"
-import precentileByComScore from "../calculators/precentileByCommunicationScore"
-import precentileByCodingScore from "../calculators/precentileByCodeScore"
-import precentileByAggScore from "../calculators/precentileByAggregate"
+import precentile from "../calculators/percentile"
+// import precentileByComScore from "../calculators/precentileByCommunicationScore"
+// import precentileByCodingScore from "../calculators/precentileByCodeScore"
+// import precentileByAggScore from "../calculators/precentileByAggregate"
 //ACTION TYPES
 
 const SET_STATS = 'SET_STATS'
@@ -23,10 +24,12 @@ export const setStats = (stats) => {
 export const getStats = (coderArray, companyArray, coderId, differential) => {
   return function (dispatch){
     const codersToCompareArray = codersToCompare(coderArray, companyArray, coderId, differential)
-    const comPrecentile = precentileByComScore(codersToCompareArray, coderId)
-    const coderPrecentile = precentileByCodingScore(codersToCompareArray, coderId)
-    const aggPrecentile = precentileByAggScore(codersToCompareArray, coderId)
-    dispatch(setStats({coderId, comPrecentile, coderPrecentile, aggPrecentile}))
+    // const comPrecentile = precentileByComScore(codersToCompareArray, coderId)
+    // const coderPrecentile = precentileByCodingScore(codersToCompareArray, coderId)
+    // const aggPrecentile = precentileByAggScore(codersToCompareArray, coderId)
+    const coderPrecentile = precentile(codersToCompareArray, coderId, "coding_score")
+    const comPrecentile = precentile(codersToCompareArray, coderId, "communication_score")     
+    dispatch(setStats({coderId, comPrecentile, coderPrecentile}))
   }
 }
 

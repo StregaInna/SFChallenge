@@ -1,3 +1,6 @@
+// This is a depricated file left here to show a previous solution.
+// For the newer solution see percetile.js
+
 // This explanation is also intended for the percentileByCommunicationScore and 
 //  the precentileByAggregateScore files. They use the same aproach.
 // NB: This file is best read bottom to top.
