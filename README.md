@@ -1,5 +1,5 @@
 # simpleFractalChallenge
-This is a solution I wrote for a coding challenge at Simple Fractal, updated to incorporate the feedback I was given.
+This is a solution I wrote for a coding challenge, updated to incorporate the feedback I was given.
 
 ## TL;DR
 If you want to jump straight into the solution for the precentile algo, look at app/calculators
