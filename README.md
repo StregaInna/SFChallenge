@@ -1,11 +1,13 @@
 # S.F. Challenge
 This is a solution I wrote for a coding challenge, updated to incorporate the feedback I was given.
+The Coding challenge was to right a function that compares the coding and communication scores from coders who share a job title and work at "similar companies," and a React App that runs that function and displays the results.
+The seed data was supplied in .csv files, and in this updated version that data is loading using jquery.
 
 ## TL;DR
 If you want to jump straight into the solution for the precentile algo, look at app/calculators
 
 ## introduction:
-I chose to build this out as a webapp with a full backend, even though it is technically beyond the scope of the assignment.
+I chose to build this out as a webapp with a full backend, rather than simple using "create React app".
 I did this because I imagine a theoretical client wanting this to be something that could be scaled up from this simple MVP.
 
 For example, we might some day want to be able to add new coders to the data set. 
