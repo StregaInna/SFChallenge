@@ -1,4 +1,4 @@
-# simpleFractalChallenge
+# S.F. Challenge
 This is a solution I wrote for a coding challenge, updated to incorporate the feedback I was given.
 
 ## TL;DR
